@@ -1,0 +1,31 @@
+# Local/system files
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Raw/cached downloaded data and generated feature cache
+outputs/data/
+
+# Trained model checkpoints are reproducible but large
+outputs/**/models/
+*.zip
+
+# Large exploratory backup runs; key summaries are documented in the coursework report
+outputs/nested_tuned_backups/
+
+# Local draft artifacts; final submitted PDF is in reports/
+coursework_report_draft.docx
+coursework_report_draft.pdf
+
+# Local report-planning notes
+REPORT_FINDINGS.md

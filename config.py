@@ -1,0 +1,61 @@
+"""Configuration for the Yang et al. (2020) DRL stock trading replication."""
+
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent
+OUTPUT_BASE_DIR = PROJECT_ROOT / "outputs"
+DATA_DIR = OUTPUT_BASE_DIR / "data"
+EXPERIMENT_NAME = "author_style"
+OUTPUT_DIR = OUTPUT_BASE_DIR / EXPERIMENT_NAME
+MODEL_DIR = OUTPUT_DIR / "models"
+NESTED_TUNED_OUTPUT_DIR = OUTPUT_BASE_DIR / "nested_tuned"
+ROBUSTNESS_OUTPUT_DIR = OUTPUT_BASE_DIR / "robustness"
+
+TICKERS = [
+    "AAPL", "AMGN", "AMZN", "AXP", "BA", "CAT", "CRM", "CSCO", "CVX", "DIS",
+    "GS", "HD", "HON", "IBM", "JNJ", "JPM", "KO", "MCD", "MMM", "MRK",
+    "MSFT", "NKE", "NVDA", "PG", "SHW", "TRV", "UNH", "V", "VZ", "WMT",
+]
+BENCHMARK_TICKER = "DIA"
+
+DATA_DOWNLOAD_START = "2014-01-01"
+FULL_START = "2015-01-01"
+TRAIN_START = "2015-01-01"
+TRAIN_END = "2021-12-31"
+VALID_START = "2022-01-01"
+VALID_END = "2022-12-31"
+TEST_START = "2023-01-01"
+END_DATE = None
+ROLLING_VALIDATION_DAYS = 63
+ROLLING_TRADE_DAYS = 63
+
+INITIAL_CASH = 1_000_000.0
+TRANSACTION_COST_PCT = 0.001
+HMAX = 100
+REWARD_SCALING = 1e-4
+RISK_FREE_RATE = 0.0
+ENABLE_TURBULENCE_CONTROL = True
+TURBULENCE_LOOKBACK = 252
+TURBULENCE_THRESHOLD_QUANTILE = 0.90
+USE_AUTHOR_TURBULENCE_LOGIC = True
+INDICATOR_WINDOW = 30
+TRAINING_CURVE_EVAL_FREQ = 10_000
+SAVE_TRAINING_CURVES = False
+SAVE_VALIDATION_DETAILS = False
+
+SEED = 42
+TRAIN_TIMESTEPS = {
+    "a2c": 30_000,
+    "ppo": 100_000,
+    "ddpg": 10_000,
+}
+
+MODEL_KWARGS = {
+    "a2c": {"gamma": 0.99},
+    "ppo": {"ent_coef": 0.005, "n_steps": 512, "batch_size": 64, "gamma": 0.99},
+    "ddpg": {"buffer_size": 10_000, "batch_size": 64, "gamma": 0.99},
+}
+
+STRICT_MISSING_DATA = True
+MAX_MISSING_ASSET_FRACTION = 0.0
+FORWARD_FILL_LIMIT = 0

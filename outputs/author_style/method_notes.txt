@@ -1,0 +1,7 @@
+Important limitation: this replication uses the current Dow 30 constituents as a fixed universe from 2015 onward. AMZN, NVDA, SHW, and some other names were not Dow constituents throughout the whole period. This follows the fixed-universe spirit of Yang et al. (2020), but it can introduce index-membership and survivorship-style bias.
+
+Rolling ensemble: PPO, A2C, and DDPG are retrained every quarter using an expanding historical window. The latest 63 trading days are used as validation, the best validation Sharpe model trades the next 63 trading days, and the next window moves forward. Newly observed trading data enters later expanding windows, which implements continued training through the trading stage without using future data inside a trading window.
+
+Turbulence risk control: when enabled, the threshold follows the author repo's adaptive rule using the 90% in-sample quantile or the maximum in-sample turbulence depending on recent turbulence. If daily turbulence exceeds the threshold, the environment sells current holdings and blocks buys for that step.
+
+Author-style turbulence logic enabled: True.

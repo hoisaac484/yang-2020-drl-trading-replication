@@ -1,0 +1,33 @@
+{
+  "a2c": {
+    "config_id": "a2c_cd18b9ba",
+    "mean_validation_sharpe": 0.222822426667398,
+    "params": {
+      "gamma": 0.99,
+      "learning_rate": 0.001,
+      "n_steps": 10
+    }
+  },
+  "ddpg": {
+    "config_id": "ddpg_b15b8e67",
+    "mean_validation_sharpe": 0.12550318493252752,
+    "params": {
+      "batch_size": 128,
+      "buffer_size": 10000,
+      "gamma": 0.99,
+      "learning_rate": 0.001,
+      "noise_sigma": 0.3
+    }
+  },
+  "ppo": {
+    "config_id": "ppo_65c42095",
+    "mean_validation_sharpe": 0.22955475934776765,
+    "params": {
+      "batch_size": 64,
+      "ent_coef": 0.005,
+      "gamma": 0.99,
+      "learning_rate": 0.0003,
+      "n_steps": 512
+    }
+  }
+}
