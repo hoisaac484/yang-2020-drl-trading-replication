@@ -123,7 +123,6 @@ Key output files:
 main.py                         # Experiment 1 author-style rolling ensemble
 run_nested_tuning.py            # Experiment 2 nested walk-forward tuning
 run_multi_seed_robustness.py    # Multi-seed robustness check
-tune_hyperparams.py             # Earlier non-nested tuning script
 config.py                       # Tickers, dates, costs, timesteps and model settings
 data.py                         # yfinance download and cleaning
 indicators.py                   # MACD, RSI, CCI, ADX/DX and turbulence
