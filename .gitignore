@@ -1,13 +1,37 @@
-# Local/system files
-.DS_Store
+# Python caches
 __pycache__/
 *.py[cod]
-.ipynb_checkpoints/
+*$py.class
+*.so
 
-# Environments
+# Virtual environments and local environment files
 .venv/
 venv/
 env/
+ENV/
+.env
+.envrc
+
+# Build/package artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Test/type-check/cache artifacts
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.cache/
+
+# Notebook/editor/system files
+.ipynb_checkpoints/
+.DS_Store
+.vscode/
+.idea/
 
 # Logs and temporary files
 *.log
